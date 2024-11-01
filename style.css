@@ -1,0 +1,129 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do corpo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #E2725b;
+    color: #333;
+    margin: 0;
+}
+
+/* Estilos para o contêiner principal */
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Título do jogo */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4a90e2;
+}
+
+/* Exibição de recorde e tentativas */
+p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+#attempts {
+    font-weight: bold;
+    color: #d9534f; /* Cor de destaque para o contador de tentativas */
+}
+/* Botão de início */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* Tabuleiro do jogo */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Estilo das cartas */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a90e2;
+    font-size: 2rem;
+    color: transparent; /* Inicialmente oculta o emoji */
+    border-radius: 8px;
+    border: 2px solid #357abd;
+    height: 80px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.card.hidden {
+    color: transparent; /* As cartas escondidas não mostram o emoji */
+}
+
+/* Cartas reveladas */
+.card:not(.hidden) {
+    color: #4a90e2; /* Cor do emoji quando a carta é revelada */
+    background-color: #fff;
+}
+
+/* Estilos para dispositivos menores que 768px */
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr); /* Ajuste para 3 colunas em dispositivos menores */
+    }
+    .card {
+        height: 50px; /* Reduz a altura das cartas */
+        font-size: 1.2rem; /* Reduz o tamanho do emoji */
+    }
+}
+
+/* Estilos para dispositivos menores que 500px */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .game-board {
+        grid-template-columns: repeat(2, 1fr); /* Ajuste para 2 colunas em telas muito pequenas */
+        gap: 8px;
+    }
+    .card {
+        height: 45px; /* Altura ainda menor para telas muito pequenas */
+        font-size: 1rem; /* Tamanho menor do emoji */
+    }
+}
