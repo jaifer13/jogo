@@ -2,7 +2,7 @@ const gameBoard = document.getElementById('gameBoard');
 const tentativasElemento = document.getElementById('tentativasRestantes');
 const recordeElemento = document.getElementById('recorde');
 const temaSelect = document.getElementById('tema');
-let tentativas = 6;
+let tentativas = 10;
 let recorde = 0;
 let paresEncontrados = 0;
 let primeiraCarta = null;
@@ -95,7 +95,7 @@ function decrementarTentativas() {
 
 // Função para resetar o jogo
 function resetGame() {
-    tentativas = 6;
+    tentativas = 10;
     paresEncontrados = 0;
     tentativasElemento.textContent = tentativas;
     criarTabuleiro();
